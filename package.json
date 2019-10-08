@@ -1,0 +1,58 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack-app": "npx webpack-dev-server --config webpack-app.js",
+    "webpack-server": "npx webpack-dev-server",
+    "server": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "autoprefixer": "^9.6.0",
+    "babel-loader": "^8.0.6",
+    "browser-sync": "^2.26.7",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.2.0",
+    "css-mqpacker": "^7.0.0",
+    "express": "^4.17.1",
+    "file-loader": "^4.2.0",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-dart-sass": "^0.9.1",
+    "gulp-imagemin": "^6.0.0",
+    "gulp-inject": "^5.0.4",
+    "gulp-less": "^4.0.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.0",
+    "streamqueue": "^1.1.2",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-middleware": "^3.7.0",
+    "webpack-dev-server": "^3.8.0",
+    "webpack-manifest-plugin": "^2.0.4"
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "IE 8"
+  ],
+  "dependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  }
+}

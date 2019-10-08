@@ -1,0 +1,261 @@
+// import
+@import './variables.scss';
+@import './mixins.scss';
+@import url('https://fonts.googleapis.com/css?family=Mina&display=swap');
+
+:root{
+    --c-bg: #{$cBg};
+    --c-text: #{$cText};
+    --d-font: #{$dFont};
+    --l-Y: #{$lY};
+    --l-X: #{$lX};
+    --cntr: #{$cntr};
+    --less-cntr: #{$lessCntr};
+    --i-heigh: #{$iHeigh};
+    --i-bord: #{$iBord};
+    font-family: var(--d-font, $dFont);
+}
+*{
+    color: var(--c-text, #{$cText});
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+}
+body{
+    background-color: var(--c-bg, $cBg);
+    display: grid;
+    grid-template-rows: 0.1fr auto;
+    padding: 5vh 0;
+    height: 100vh;
+}
+a{
+    text-decoration: none;
+}
+label{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    & > span::first-letter{
+        color: red;
+    }
+    & *{
+        font-size: inherit;
+    }
+}
+
+input{
+    background-color: transparent;
+    height: var(--i-heigh, $iHeigh);
+    border: var(--i-bord, $iBord) solid var(--less-cntr, $lessCntr);
+    border-radius: 0.5em;
+    transition: border 0.3s linear;
+    &:focus{
+        outline: none;
+        border: var(--i-bord, $iBord) solid var(--cntr, #{$cntr});
+    }
+    @include media(){
+        &{
+            height: $iHeigh+0.3em;
+        }
+    }
+}
+button{
+    display: inline-block;
+    background-color: transparent;
+    outline: none;
+    border: 2.5px solid var(--less-cntr, $lessCntr);
+    border-radius: 0.4em;
+    height: 2.4em;
+    width: 6.6em;
+    cursor: pointer;
+    transition: border-color 0.3s linear; 
+    font-size: 1.5rem;
+    &:hover{
+        border-color: var(--cntr, $cntr);
+    }
+}
+.c-cntr{
+    color: var(--cntr, $cntr);
+    font-size: inherit;
+}
+.button{
+    @extend button;
+    @include flex();
+}
+.logo-header{
+    align-self: center;
+    justify-self: center;
+}
+.logo-name{
+    font-size: (45/16)+rem;
+    font-weight: 600;
+    & > span{
+        font-size: 0;
+        vertical-align: middle;
+        &:before{
+            content: '';
+            display: inline-block;
+            background: url('../img/logo.svg') no-repeat center top /cover;
+            height: var(--l-X, $lX);
+            width: var(--l-Y, $lY);
+        }
+    }
+}
+.main-body{
+    @include flex(initial, $ali: stretch);
+    & > .full-logo{
+        display: none;
+        @include media(){
+            &{
+                background: url('../img/logo.svg') no-repeat center center /cover;
+                width: 38vw;
+                height: 39vw;
+                display: inherit;
+                align-self: center;
+            }
+        }
+    }
+    @include media(){
+        &{
+            @include flex(initial, space-around, initial);
+        }
+    }
+}
+.form-container{
+    @include grid();
+    & > .login-form{
+        display: flex;
+        flex-direction: column;
+        width: (100*(2/2.6))+vw;
+        & > *{
+            font-size: 1.4rem;
+            margin-bottom: 1.45em;
+        }
+        & > .greetings{
+            display: none;
+            @include media(){
+                & {
+                    $font: 3.5rem;
+                    display: inherit;
+                    font-weight: normal;
+                    font-size: $font;
+                    align-self: center;
+                }
+            }
+        }
+        & > .checkbox{
+            display: flex;
+            align-items: center;
+            & > label{
+                display: initial;
+                font-size: 1.2rem;
+                & > .box{
+                    display: inline-block;
+                    width: 0.7em;
+                    height: 0.7em;
+                    border: 1.3px solid var(--less-cntr, $lessCntr);
+                    transition: border 0.2s linear;
+                    margin-right: 10px;
+                    position: relative;
+                    &:before{
+                        content: '';
+                        display: inline-block;
+                        position: absolute;
+                        width: 90%;
+                        height: 45%;
+                        border-left: 1px solid white;
+                        border-bottom: 1px solid white;
+                        transform: rotate(-45deg);
+                        transition: opacity 0.2s linear;
+                        opacity: 0;
+                    }
+                }
+            }
+            & > input:checked + label > .box{
+                border: 1.3px solid var(--cntr, $cntr);
+                &::before{
+                    opacity: 1;
+                }
+            }
+        }
+        & > .final-login{
+            @include flex(initial, space-between);
+            & > .forgot{
+                font-size: 0.9rem;
+            }
+        }
+        @include media(){
+            &{
+                width: initial;
+                justify-self: stretch;
+            }
+        }
+    }
+    & > .sign-up-form{
+        @include flex();
+        & > *{
+            font-size: 2.2rem;
+            & > *{
+                font-size: inherit;
+            }
+        }
+        & > h2{
+            margin-bottom: 1em;
+        }
+        & > .body-container{
+            display: none;
+            @include media(){
+                &{
+                    display: grid;
+                    grid-template-columns: repeat(2, minmax(100px, 0.8fr));
+                    grid-template-rows: 1fr 1fr 1.1fr;
+                    grid-gap: 10% 5%;
+                    & > .surname{
+                        grid-column: 1 / 2;
+                    }
+                    & > .date-container{
+                        grid-column: 2 / 3;
+                        grid-row: 1 / 3;
+                        display: grid;
+                        grid-gap: 10% 5%;
+                        grid-template-columns: repeat(2, minmax(50px, 0.5fr));
+                        & > *{
+                            font-size: 1.4rem;
+                            text-align: center;
+                        }
+                        & > .year{
+                            grid-column: 1 / 3;
+                        }
+                        & > label > input{
+                            text-align: center;
+                        }
+                    }
+                    & > button{
+                        align-self: center;
+                        justify-self: center;
+                        font-size: 2rem;
+                        grid-column: 1 / 3;
+                    }
+                    & > *{
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+        }
+        @include media(){
+            &{
+                justify-content: initial;
+                align-self: stretch;
+                & > .button{
+                    display: none;
+                }
+            }
+        }
+    }
+    @include media(){
+        &{
+            flex-grow: 0.3;
+        }
+    }
+}

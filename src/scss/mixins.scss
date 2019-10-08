@@ -1,0 +1,28 @@
+@mixin flex($dir: column, $jst: center, $ali: center){
+    display: flex;
+    flex-direction: #{$dir};
+    justify-content: #{$jst};
+    align-items: #{$ali};
+    @content;
+}
+@mixin grid($jst: center, $ali: center){
+    display: grid;
+    justify-items: #{$jst};
+    align-items: #{$ali};
+    @content;
+}
+@mixin media($h: 0, $w: 1000px, $sw: min, $sh: min){
+    @if ($h == 0){
+        @media only screen and(#{$sw}-width: #{$w}){
+            @content;
+        }
+    } @else if($h != 0 and $w != 0){
+        @media only screen and(#{$sw}-width: $w) and (#{$sh}-height: #{$h}){
+            @content;
+        }
+    } @else{
+        @media only screen and(#{$sh}-heighst: #{$h}){
+            @content;
+        }
+    }
+}
