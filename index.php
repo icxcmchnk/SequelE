@@ -29,7 +29,7 @@
 </head>
 <body>
 	<header class="logo-header">
-		<h1 class="logo-name" ><span>S</span>equelE</h1>
+		<h1 class="logo-name"><span>S</span>equelE</h1>
 	</header>
 	<div class="main-body">
 		<div class="full-logo"></div>
