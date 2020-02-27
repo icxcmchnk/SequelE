@@ -28,9 +28,9 @@ class SignUpForm extends React.PureComponent{
                             <input className="year" type="text" name="year" id="year"/>
                         </label>
                     </div>
-                    <button type="submit"><span className="c-cntr">Next</span> step</button>
+                    <button type="submit" className="sendbtn"><span className="c-cntr">Next</span> step</button>
                 </div>
-				<a href="#" className="button"><span><span className="c-cntr">Sign</span> up</span></a>
+				<a href="./mb-add-on.php" className="button"><span><span className="c-cntr">Sign</span> up</span></a>
 			</form>
         )
     }

@@ -1,0 +1,79 @@
+@import './mb-nextstep-main.scss';
+.sign-up-form{
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    grid-template-columns: 0.1fr;
+    & > .body-container{
+        & > *{
+            margin-bottom: 3vh;
+            font-size: 1.5rem;
+        }
+        & > .code{
+            margin-bottom: 1.5vh;
+            & > .code-container{
+                @include flex(initial, initial);
+                & > .code-link-reload{
+                    position: relative;
+                    &::after{
+                        content: 'R';
+                        font-size: 0.9rem;
+                        position: absolute;
+                        right: 38%;
+                        top: 23.5%;
+                    }
+                }
+                &  .code-img-reload{
+                    vertical-align: middle;
+                    height: 40px;
+                }
+            }
+            & .code-input{
+                margin-right: 2vw;
+                width: 45%;
+                @include media(){
+                    & {
+                        margin-right: 1vw;
+                    }
+                }
+            }
+        }
+        & > .sendbtn{
+            margin: 2vh 0 0;
+        }
+        @include media(){
+            & {
+                width: initial;
+                display: grid;
+                grid-gap: 1em;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+                & > .password{
+                    grid-column: 1 / 2;
+                }
+                & > .repeat-password{
+                    grid-column: 1 / 2;
+                }
+                & > .email{
+                    grid-column: 2 / 3;
+                    grid-row: 1 / 2;
+                }
+                & > .code{
+                    grid-column: 2 / 3;
+                    grid-row: 2 / 3;
+                }
+                & > .sendbtn{
+                    margin: 0;
+                    justify-self: center;
+                }
+            }
+        }
+    }
+}
+.login-back{
+    & > button{
+        font-size: 2rem;
+    }
+    & > h2{
+        font-size: 2rem;
+    }
+}

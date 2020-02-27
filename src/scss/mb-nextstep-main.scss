@@ -1,0 +1,36 @@
+.sign-up-form{
+    @include flex(column, space-around);
+    & > .body-container{
+        width: (100*(2/2.6))+vw;
+        display: flex;
+        flex-direction: column;
+        & > *{
+            margin-bottom: 4.5vh;
+            font-size: 1.2rem;
+        }
+        & > .sendbtn {
+            align-self: flex-end;
+            margin-top: 2.2vh;
+        }
+        & > .date-container{
+            display: grid;
+            grid-template-columns: repeat(2, minmax(50px, 0.5fr)) minmax(60px, 1fr);
+            grid-template-rows: auto;
+            grid-gap: 0 1em;
+            & > *{
+                font-size: 1.2rem;
+                text-align: center;
+            }
+            & > label > input{
+                text-align: center;
+            }
+        }
+    }
+}
+.login-back{
+    @include flex();
+    & > h2{
+        margin-bottom: 1.5em;
+        font-size: 1.5rem;
+    }
+}
