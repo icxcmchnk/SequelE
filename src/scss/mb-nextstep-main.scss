@@ -1,12 +1,13 @@
 .sign-up-form{
-    @include flex(column, space-around);
+    @include grid();
+    grid-template-rows: 3fr 1fr;
     & > .body-container{
         width: (100*(2/2.6))+vw;
         display: flex;
         flex-direction: column;
         & > *{
-            margin-bottom: 4.5vh;
-            font-size: 1.2rem;
+            margin-bottom: var(--mrgn, $mrgn);
+            font-size: var(--header-2, $header2);
         }
         & > .sendbtn {
             align-self: flex-end;
@@ -29,8 +30,10 @@
 }
 .login-back{
     @include flex();
+    & > *{
+        font-size: var(--header-1, $header2);
+    }
     & > h2{
-        margin-bottom: 1.5em;
-        font-size: 1.5rem;
+        margin-bottom: 1em;
     }
 }

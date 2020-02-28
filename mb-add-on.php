@@ -17,7 +17,7 @@
 	<meta property="og:url" content=""/>
 	<meta property="og:type" content="article"/>
 	<title>Document</title>
-	<script src="./dist/main.js" defer></script>
+	<script src="./dist/mb-add-on-main.js" defer></script>
 	<link rel="shortcut icon" href="" type="image/x-icon">
 </head>
 <body>

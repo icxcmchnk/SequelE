@@ -11,7 +11,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, './dist/'),
         publicPath: '/',
-        filename: '[name].js',
+        filename: 'mb-add-on-main.js',
     },
     optimization: {
         removeAvailableModules: false,

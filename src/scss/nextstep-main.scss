@@ -1,12 +1,8 @@
 @import './mb-nextstep-main.scss';
 .sign-up-form{
-    display: grid;
-    grid-template-rows: 3fr 1fr;
-    grid-template-columns: 0.1fr;
     & > .body-container{
         & > *{
             margin-bottom: 3vh;
-            font-size: 1.5rem;
         }
         & > .code{
             margin-bottom: 1.5vh;
@@ -68,12 +64,9 @@
             }
         }
     }
-}
-.login-back{
-    & > button{
-        font-size: 2rem;
-    }
-    & > h2{
-        font-size: 2rem;
+    @include media(){
+        &{
+            height: 100%;
+        }
     }
 }

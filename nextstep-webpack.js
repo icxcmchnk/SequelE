@@ -11,12 +11,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, './dist/'),
         publicPath: '/',
-        filename: '[name].js',
-    },
-    optimization: {
-        removeAvailableModules: false,
-        removeEmptyChunks: false,
-        splitChunks: false
+        filename: 'nextstep-main.js',
     },
     module: {
         rules: [
